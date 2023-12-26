@@ -24,14 +24,14 @@ return 1;
 else if(ch=='*'||ch=='/'||ch=='%')
 return 2;
 }
+
 void convertInfix(char *e)
 {
 char *p1,*p2,*p3,x;
 int flag=0,count1,count2;
 p1=p2=p3=e;
 count1=count2=0;
-char invalid[100]="Invalid symbols in infix expression. Only alphanumeric
-and { '+', '-','*', '%', '/' } are allowed.";
+char invalid[100]="Invalid symbols in infix expression. Only alphanumeric and { '+', '-','*', '%', '/' } are allowed.";
 while(*p1 !='\0')
 {
 if(*p1=='(')
@@ -43,8 +43,7 @@ p1++;
 while(*p2!='\0')
 {
 char ch=*p2;
-if(isalnum(ch)||ch=='+'||ch=='-
-'||ch=='*'||ch=='/'||ch=='%'||ch=='('||ch==')')
+if(isalnum(ch)||ch=='+'||ch=='-'||ch=='*'||ch=='/'||ch=='%'||ch=='('||ch==')')
 {
 p2++;
 continue;
@@ -53,6 +52,7 @@ else
 {
 flag=1;
 break;
+}}
 if(count1!=count2&&flag==0)
 printf("Invalid infix expression : unbalanced parenthesis.\n");
 if(count1!=count2&&flag==1)
